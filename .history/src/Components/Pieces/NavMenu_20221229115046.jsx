@@ -1,0 +1,43 @@
+import React from "react";
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+import Button from 'react-bootstrap/Button';
+import { BChart } from "../Graphics/BChart";
+import { app } from "../../fb";
+
+function NavMenu() {
+
+  const logout = () => {
+    app.auth().signOut();
+  }
+
+  return (
+    <Tabs
+      defaultActiveKey="home"
+      id="fill-tab-example"
+      className="mb-3"
+    >
+      <Tab eventKey="home" title="Principal">
+        <BChart/>
+      </Tab>
+      <Tab eventKey="donations" title="Donaciones">
+        bbbbbbbbbbbbbb
+      </Tab>
+      <Tab eventKey="campaigns" title="Campañas">
+        cccccccccccccc
+      </Tab>
+      <Tab eventKey="users" title="Usuarios">
+        dddddddddddddd
+      </Tab>
+      <Tab eventKey="locations" title="Sitios">
+        eeeeeeeeeeeeee
+      </Tab>
+        <Button variant="primary" size="lg" onClick={logout}>
+          Cerrar sesión
+        </Button>{' '}
+      
+    </Tabs>
+  );
+}
+
+export default NavMenu;
